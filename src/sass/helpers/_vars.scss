@@ -1,0 +1,65 @@
+// vars
+$fonts: '../fonts/';
+$images: '../images/';
+
+// fonts
+$Montserrat: 'Montserrat', sans-serif;
+$bebas: 'bebasNeue';
+
+$breakpoints: (
+	phone-xs: 375px,
+	phone: 768px,
+	tablet: 992px,
+	desktop: 1200px,
+	desktop_lg: 1400px,
+);
+
+// font settings
+$grid-gutter-width: 15px;
+$container-large-desktop: 1170px;
+
+$font-family-base: $Montserrat;
+$font-size-base: 13px;
+$line-height-base: 16px;
+$font-size-h1: 30px;
+$font-size-h2: 60px;
+$font-size-h3: 24px;
+$font-size-h4: 24px;
+
+$paragraph-spacing: 0 0 15px;
+
+$hover-opacity: 0.8;
+$time-animation: 0.3s;
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #333;
+
+$tundora: #4c4c4c;
+$aqua_haze: #f0f6f4;
+$satin_linen: #e5e4d7;
+$black_haze: #e7e8e8;
+$breaker_bay: #52a49f;
+$monte_carlo: #7fcdc7;
+$puerto_rico: #36c1ba;
+$java: #1bb0be;
+$cloud_burst: #203751;
+$mantis: #78bc61;
+$bunker: #121920;
+$mako: #41474d;
+$oslo_gray: #878a8d;
+
+$mirage: lighten(saturate(adjust-hue($bunker, -1), 5.33), 4.90);
+
+$base-color: $bunker;
+$body-bg: $white;
+
+$link-color: $bunker;
+
+$btn-color: $black;
+$btn-border-radius-base: 6px;
+$btn-font-size: 16px;
+$btn-line-height: 20px;
+$btn-font-weight: 700;
+$btn-min-width: 160px;

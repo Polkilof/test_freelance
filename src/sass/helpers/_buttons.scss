@@ -1,0 +1,48 @@
+/* buttons */
+.btn{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid transparent;
+	text-align: center;
+	border-radius: $btn-border-radius-base;
+	font-weight: $btn-font-weight;
+	font-size: $btn-font-size;
+	line-height: $btn-line-height;
+	padding: 10px 38px;
+	color: $btn-color;
+	min-width: $btn-min-width;
+	cursor: pointer;
+	transition: all .3s;
+	&_sm{
+		padding: 12px 8px;
+		min-width: 130px;
+	}
+	&_md{
+		font-size: 18px;
+		padding: 19px 50px;
+		min-width: 200px;
+	}
+	&.active:focus,
+	&.active:hover,
+	&:focus,
+	&:active,
+	&:hover{
+		box-shadow: none;
+		outline: none;
+	}
+}
+.btn__info{
+	background: $mantis;
+	border-color: $mantis;
+	color: $white;
+	&.active:focus,
+	&.active:hover,
+	&:focus,
+	&:active,
+	&:hover{
+		background: $white;
+		color: $mantis;
+	}
+}
+/*end btn*/
