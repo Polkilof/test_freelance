@@ -6,12 +6,19 @@
 	&__nav{
 		padding: 50px 0;
 		background: $mirage;
+		@include media("<phone"){
+			padding: 25px 0;
+		}
 	}
 	&__info{
 		display: flex;
-
 		height: 80px;
 		background: $bunker;
+		@include media("<phone"){
+			display: block;
+			height: auto;
+			padding: 6px 0;
+		}
 		> .container{
 			display: flex;
 			align-items: center;
@@ -25,6 +32,10 @@
 		font-weight: 400;
 		color: $white;
 		margin: 0;
+		@include media("<phone"){
+			font-size: 10px;
+			line-height: 14px;
+		}
 	}
 }
 
@@ -35,14 +46,16 @@
 	font-size: 0;
 	line-height: 0;
 	text-align: center;
-	@include media("<phone") {
-		display: inline-block;
-		vertical-align: top;
+	@include media("<phone"){
+		margin: 0 -10px 15px;
 	}
 	&__item{
 		display: inline-block;
 		vertical-align: top;
 		padding: 0 21px;
+		@include media("<phone"){
+			padding: 0 10px;
+		}
 	}
 	&__link{
 		position: relative;
@@ -53,6 +66,11 @@
 		overflow: hidden;
 		border-radius: 15px;
 		transition: all .3s;
+		@include media("<phone"){
+			width: 35px;
+			height: 35px;
+			border-radius: 10px;
+		}
 		&:hover{
 			box-shadow: 3px 3px 3px rgba($bunker, 1);
 			background: $puerto_rico;
@@ -99,6 +117,11 @@
 		text-transform: uppercase;
 		padding: 5px 24px;
 		transition: color .2s;
+		@include media("<phone"){
+			font-size: 12px;
+			line-height: 16px;
+			padding: 5px 20px;
+		}
 		&:hover{
 			color: $puerto_rico;
 		}
@@ -106,15 +129,21 @@
 }
 
 .footer-info{
-	margin: 0 -16px;
+	margin: 0 0 0 -16px;
 	padding: 0;
 	list-style: none;
 	font-size: 0;
 	line-height: 0;
+	@include media("<phone"){
+		margin: 0 0 0 -8px;
+	}
 	&__item{
 		display: inline-block;
 		vertical-align: top;
 		padding: 0 16px;
+		@include media("<phone"){
+			padding: 6px 8px;
+		}
 	}
 	&__link{
 		display: block;
@@ -123,21 +152,36 @@
 		font-weight: 400;
 		color: $white;
 		padding-left: 56px;
+		@include media("<phone"){
+			font-size: 12px;
+			line-height: 20px;
+			padding-left: 30px;
+		}
 		&:hover{
 			color: $white;
 		}
 		&_tel{
 			background: url(#{$images}ico-tel.svg) 0 50% no-repeat;
-			background-size: contain;
+			background-size: 35px auto;
+			@include media("<phone"){
+				background-size: 26px auto;
+			}
 		}
 		&_mail{
 			background: url(#{$images}ico-mail.svg) 0 50% no-repeat;
-			background-size: contain;
+			background-size: 35px auto;
+			@include media("<phone"){
+				background-size: 26px auto;
+			}
 		}
 		&-text{
 			display: block;
 			font-size: 13px;
 			line-height: 1;
+			@include media("<phone"){
+				font-size: 9px;
+				line-height: 10px;
+			}
 		}
 	}
 }
@@ -145,19 +189,19 @@
 .dropdown-block{
 	position: relative;
 	width: 195px;
+	min-width: 195px;
 	border-radius: 5px;
 	background: rgba($white, 0.05);
 	margin: 0 0 0 auto;
-	@include media("<tablet") {
-		margin: 20px 0 0;
-		display: block;
+	@include media("<phone"){
+		width: 120px;
+		min-width: 120px;
 	}
 	&.open{
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		.dropdown-block__link_active{
 			&:before{
-				-webkit-transform: translate(0, -50%) rotate(45deg);
 				transform: translate(0, -50%) rotate(45deg);
 				margin: 2px 0 0;
 			}
@@ -177,7 +221,7 @@
 		width: 100%;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
-		background: rgba($white, 0.05);
+		background: lighten(desaturate(adjust-hue($bunker, -2), 10.19), 4.51);
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity .3s, visiblity .3s;
@@ -190,17 +234,24 @@
 		display: block;
 		padding: 14px 15px;
 		font-size: 13px;
-		line-height: 1;
+		line-height: 14px;
 		font-weight: 400;
 		text-align: left;
 		color: $white;
 		transition: all .2s ease-in-out;
+		@include media("<phone"){
+			padding: 12px 10px;
+			font-size: 12px;
+		}
 		&:hover{
 			background: $white;
 			color: $black;
 		}
 		&_active{
 			padding-right: 34px;
+			@include media("<phone"){
+				padding-right: 24px;
+			}
 			&:before{
 				content: "";
 				position: absolute;
@@ -212,10 +263,11 @@
 				height: 6px;
 				margin: -2px 0 0;
 				border-color: $white;
-				-webkit-transform: translate(0, -50%) rotate(225deg);
 				transform: translate(0, -50%) rotate(225deg);
-				-webkit-transition: all .3s ease-in-out;
 				transition: all .3s ease-in-out;
+				@include media("<phone"){
+					right: 10px;
+				}
 			}
 			&:hover{
 				background: none;

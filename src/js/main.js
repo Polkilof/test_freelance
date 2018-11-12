@@ -1,10 +1,10 @@
 $(document).ready(initPage);
 function initPage(){
 	ImgTobg();
-	mobileMenu();
+	//mobileMenu();
 	pageScrollTop();
 	dropdownToggle();
-	
+	customSelect();
 }
 
 function ImgTobg() {
@@ -57,4 +57,13 @@ function dropdownToggle(){
 			}
 		}
 	});
+}
+
+function customSelect(){
+	jcf.setOptions('Select', {
+		wrapNative: false,
+		wrapNativeOnMobile: false,
+	});
+
+	jcf.replaceAll();
 }

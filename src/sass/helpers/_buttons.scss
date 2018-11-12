@@ -14,14 +14,32 @@
 	min-width: $btn-min-width;
 	cursor: pointer;
 	transition: all .3s;
+	@include media("<phone"){
+		font-size: 12px;
+		line-height: 16px;
+		border-radius: 4px;
+		padding: 8px 28px;
+	}
 	&_sm{
 		padding: 12px 8px;
 		min-width: 130px;
+		@include media("<phone"){
+			min-width: 80px;
+			padding: 10px 6px;
+		}
 	}
 	&_md{
 		font-size: 18px;
 		padding: 19px 50px;
 		min-width: 200px;
+	}
+	&_lg{
+		font-size: 24px;
+		padding: 19px 50px;
+		min-width: 200px;
+	}
+	&_w100{
+		width: 100%;
 	}
 	&.active:focus,
 	&.active:hover,

@@ -12,17 +12,115 @@
 </head>
 <body>
 	<div class="wrapper">
+		//= inc/_header.html
 		<div class="page">
-			//= inc/_header.html
 			<div class="container">
-				<a href="#" class="btn btn_md btn__info">Order Simpleat</a>
-				<a href="#" class="btn btn_md btn__info">Order now</a>
+				<!-- <a href="#" class="btn btn_md btn__info">Order Simpleat</a>
+				<a href="#" class="btn btn_md btn__info">Order now</a> -->
+
+				<section class="hero">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="hero__img">
+								<img class="hero__image" src="images/img-bottles.png" alt="bottles">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<h2 class="h2 _black _figure">More than food</h2>
+							<p class="hero__text">Everything your body needs in one bottle of Simpleat. Drink Simpleat and forget about hunger. Be the first to try nutrition designed<br>for your needs.</p>
+							<strong class="hero__strong-text">Free shipping for orders over €90</strong>
+							<div class="hero__form">
+								<form action="#">
+									<div class="row">
+										<div class="col-sm-12">
+											<select class="jcf-hidden">
+												<option class="hideme" value="0">12 bottles</option>
+												<option value="1">1 bottles</option>
+												<option value="2">2 bottles</option>
+												<option value="3">3 bottles</option>
+												<option value="4">4 bottles</option>
+												<option value="5">5 bottles</option>
+												<option value="6">6 bottles</option>
+												<option value="7">7 bottles</option>
+												<option value="8">8 bottles</option>
+												<option value="9">9 bottles</option>
+												<option value="10">10 bottles</option>
+												<option value="11">11 bottles</option>
+											</select>
+										</div>
+										<div class="col-sm-6">
+											<div class="radio">
+												<label for="lbl-radio01">
+													<input id="lbl-radio01" type="radio" name="optionsRadios" value="option1" checked>
+													<span>One-Time</span>
+													<sup>Purchase</sup>
+													<span class="control-indicator"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="radio info-wrap">
+												<label for="lbl-radio02">
+													<input id="lbl-radio02" type="radio" name="optionsRadios" value="option2">
+													<span>Subscribe</span>
+													<sup>and save 5%</sup>
+													<span class="control-indicator"></span>
+												</label>
+												<div class="info">
+													<div class="info__holder">
+														<p class="info__text">By subscribing you will receive 12 bottles of Simpleat monthly</p>
+														<p class="info__text">You can cancel your subscription anytime. <a href="#" class="link">Learn more</a></p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="navigation active">
+											<div class="col-sm-6">
+												<div class="price">
+													<strong class="price__item">€32</strong>
+													<p class="price__descr">€2.60 per meal (400 kcal)</p>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<button type="submit" class="btn btn_lg btn_w100 btn__info">Add to cart</button>
+											</div>
+										</div>
+										<div class="navigation navigation_discount">
+											<div class="col-sm-6">
+												<div class="price">
+													<span class="price__item_original">Originally €32</span>
+													<strong class="price__item">€32 <p class="price__descr">billed monthly</p></strong>
+													<p class="price__descr">€2.60 per meal</p>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<button type="submit" class="btn btn_lg btn_w100 btn__info">Subscribe</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+				<section class="why-simpleat-visual"></section>
+				<section class="why-simpleat"></section>
+				<section class="testimonial"></section>
+				<section class="ingredients"></section>
+				<section class="facts"></section>
+				<section class="chart"></section>
+				<section class="super-food"></section>
+				<section class="newsletter"></section>
 			</div>
 		</div>
 		//= inc/_footer.html
 	</div><!-- / wrapper -->
 	<noscript>Detected missing Javascript support. Certain website features will not operate correctly with Javascript disabled.</noscript>
 	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jcf.js"></script>
+	<script src="js/jcf.select.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
