@@ -34,7 +34,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<select class="jcf-hidden">
-												<option class="hideme" value="0">12 bottles</option>
+												<option class="hideme" value="12">12 bottles</option>
 												<option value="1">1 bottles</option>
 												<option value="2">2 bottles</option>
 												<option value="3">3 bottles</option>
@@ -49,7 +49,7 @@
 											</select>
 										</div>
 										<div class="col-sm-6">
-											<div class="radio">
+											<div class="radio" data-name="1">
 												<label for="lbl-radio01">
 													<input id="lbl-radio01" type="radio" name="optionsRadios" value="option1" checked>
 													<span>One-Time</span>
@@ -59,11 +59,11 @@
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="radio info-wrap">
+											<div class="radio info-wrap" data-name="2">
 												<label for="lbl-radio02">
 													<input id="lbl-radio02" type="radio" name="optionsRadios" value="option2">
 													<span>Subscribe</span>
-													<sup>and save 5%</sup>
+													<sup>and save <var class="sum-discount">5</var>%</sup>
 													<span class="control-indicator"></span>
 												</label>
 												<div class="info">
@@ -74,23 +74,23 @@
 												</div>
 											</div>
 										</div>
-										<div class="navigation active">
+										<div class="navigation active" data-name="1">
 											<div class="col-sm-6">
 												<div class="price">
-													<strong class="price__item">€32</strong>
-													<p class="price__descr">€2.60 per meal (400 kcal)</p>
+													<strong class="price__item">€<span class="sum">32</span></strong>
+													<p class="price__descr">€<span class="sum-one">2.60</span> per meal (400 kcal)</p>
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<button type="submit" class="btn btn_lg btn_w100 btn__info">Add to cart</button>
 											</div>
 										</div>
-										<div class="navigation navigation_discount">
+										<div class="navigation navigation_discount" data-name="2">
 											<div class="col-sm-6">
 												<div class="price">
-													<span class="price__item_original">Originally €32</span>
-													<strong class="price__item">€32 <p class="price__descr">billed monthly</p></strong>
-													<p class="price__descr">€2.60 per meal</p>
+													<span class="price__item_original">Originally €<span class="previous-sum">32</span></span>
+													<strong class="price__item">€<span class="total-sum">32</span> <p class="price__descr">billed monthly</p></strong>
+													<p class="price__descr">€<span class="sum-one-def">2.60</span> per meal</p>
 												</div>
 											</div>
 											<div class="col-sm-6">

@@ -5,6 +5,8 @@ function initPage(){
 	pageScrollTop();
 	dropdownToggle();
 	customSelect();
+
+	totalPrice();
 }
 
 function ImgTobg() {
@@ -66,4 +68,44 @@ function customSelect(){
 	});
 
 	jcf.replaceAll();
+}
+
+
+function varsTotalPrice(){
+	var val = $(".hero__form select option:selected").val();
+	var sumOne = parseFloat( $('.navigation .sum-one').text() );
+	var allPrice = val*sumOne;
+	$('.navigation .sum').text(allPrice.toFixed(1));
+	$('.navigation .previous-sum').text(allPrice.toFixed(1));
+	$('.navigation .sum-one-def').text(sumOne);
+	var discount = parseInt( $('.radio .sum-discount').text() );
+	var sumDiscount = parseFloat( allPrice/100*discount);
+	var totalPrise = allPrice - sumDiscount;
+	$('.navigation .total-sum').text(totalPrise.toFixed(1));
+}(varsTotalPrice())
+
+
+function totalPrice(){
+
+	$('.hero__form select').on('change', function() {
+		varsTotalPrice();
+	});
+
+	$('.hero__form .radio').click(function() {
+		$('.hero__form .radio.active').removeClass('active');
+		if ( !$(this).hasClass('active') ) {
+			$(this).addClass('active');
+		}
+		var	radio = $('.hero__form .radio.active').attr('data-name');
+		$('.hero__form .navigation').each(function(){
+			var nav = $(this).attr('data-name');
+			if ( nav == radio ){
+				$('.hero__form .navigation').removeClass('active');
+				$(this).addClass('active');
+			}
+		});
+
+	});
+
+
 }

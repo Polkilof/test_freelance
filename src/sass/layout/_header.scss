@@ -121,6 +121,7 @@
 		}
 	}
 	&__icon{
+		position: relative;
 		display: block;
 		&_cart{
 			width: 24px;
@@ -128,6 +129,23 @@
 			@include media("<phone"){
 				margin: 0;
 				width: 22px;
+			}
+			.number-purchases{
+				position: absolute;
+				top: -7px;
+				right: -7px;
+				display: block;
+				min-width: 18px;
+				min-height: 18px;
+				border-radius: 50%;
+				overflow: hidden;
+				background: $mantis;
+				font-size: 11px;
+				line-height: 18px;
+				color: $white;
+				text-align: center;
+				font-weight: 400;
+				font-style: normal;
 			}
 		}
 		&_login{
