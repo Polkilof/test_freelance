@@ -5,13 +5,13 @@ function initPage(){
 	pageScrollTop();
 	dropdownToggle();
 	customSelect();
-
+	tabs();
 	totalPrice();
 }
 
 function ImgTobg() {
 	$('.img-to-bg').each(function() {
-		if ($(this).find('.img-to-bg__image').length) {
+		if ($(this).find('img').length) {
 			$(this).css('background-image', 'url(' + $(this).find('> img').attr('src') + ')');
 		}
 	});
@@ -30,13 +30,6 @@ function mobileMenu(){
 }
 
 function pageScrollTop() {
-	$(window).scroll(function(){
-		if ($(this).scrollTop() > 100) {
-			$('.btn-page-up').fadeIn();
-		} else {
-			$('.btn-page-up').fadeOut();
-		}
-	});
 	$('.btn-page-up').click(function(e){
 		var offsetTop = $('body').offset().top;
 		$('html, body').stop().animate({ 
@@ -70,18 +63,27 @@ function customSelect(){
 	jcf.replaceAll();
 }
 
+function tabs(){
+	$('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+		$(this)
+		.addClass('active').siblings().removeClass('active')
+		.closest('.tabs').find('.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+	});
+}
+
 
 function varsTotalPrice(){
 	var val = $(".hero__form select option:selected").val();
 	var sumOne = parseFloat( $('.navigation .sum-one').text() );
 	var allPrice = val*sumOne;
-	$('.navigation .sum').text(allPrice.toFixed(1));
-	$('.navigation .previous-sum').text(allPrice.toFixed(1));
-	$('.navigation .sum-one-def').text(sumOne);
+	$('.navigation .sum').text(allPrice.toFixed(2)).addClass('total');
+	$('.navigation .previous-sum').text(allPrice.toFixed(2));
 	var discount = parseInt( $('.radio .sum-discount').text() );
 	var sumDiscount = parseFloat( allPrice/100*discount);
 	var totalPrise = allPrice - sumDiscount;
-	$('.navigation .total-sum').text(totalPrise.toFixed(1));
+	if ( $(".hero__form .radio.active").find('.sum-discount').length >= 1 ){
+		$('.navigation .sum.total').text(totalPrise.toFixed(2));
+	}
 }(varsTotalPrice())
 
 
@@ -96,15 +98,29 @@ function totalPrice(){
 		if ( !$(this).hasClass('active') ) {
 			$(this).addClass('active');
 		}
-		var	radio = $('.hero__form .radio.active').attr('data-name');
+		if ( $('.hero__form .radio.active').find('.sum-discount').length >= 1 ) {
+			$('.hero__form .navigation').addClass('navigation_discount');
+			if ( $('.price__item').find('.price__descr').length == 0 ){
+				$(' <p class="price__descr">billed monthly</p>').appendTo('.price__item');
+			}
+			$('.btn__container').find('.btn').remove();
+			$('.btn__container').find('.btn').remove();
+			$('<button type="submit" class="btn btn_lg btn_w100 btn__info">Subscribe</button>').appendTo('.btn__container');
+		} else {
+			$('.hero__form .navigation').removeClass('navigation_discount');
+			$('.price__item').find('.price__descr').remove();
+			$('.btn__container').find('.btn').remove();
+			$('<button type="submit" class="btn btn_lg btn_w100 btn__info">Add to cart</button>').appendTo('.btn__container');
+		}
+		varsTotalPrice();
+		/*var radio = $('.hero__form .radio.active').attr('data-name');
 		$('.hero__form .navigation').each(function(){
 			var nav = $(this).attr('data-name');
 			if ( nav == radio ){
 				$('.hero__form .navigation').removeClass('active');
 				$(this).addClass('active');
 			}
-		});
-
+		});*/
 	});
 
 

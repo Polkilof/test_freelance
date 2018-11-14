@@ -1,8 +1,14 @@
 .hero{
 	padding: 98px 0 90px;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
 	&__img{
 		display: block;
 		max-width: 512px;
+		@include media("<tablet"){
+			margin: 0 auto 20px;
+		}
 	}
 	&__image{
 		display: block;
@@ -17,6 +23,13 @@
 		font-size: 16px;
 		line-height: 24px;
 		margin: 0 0 6px;
+		@include media("<phone"){
+			font-size: 14px;
+			line-height: 20px;
+		}
+		&._white{
+			color: $white;
+		}
 	}
 	&__strong-text{
 		display: block;
@@ -37,7 +50,7 @@
 	margin: 0 0 20px;
 	width: 100%;
 	border-radius: 5px;
-	height: 60px;
+	height: auto;
 	background: $white;
 	cursor: default;
 	color: $bunker;
@@ -100,6 +113,10 @@
 	color: $bunker;
 	margin: 0;
 	padding: 16px 50px 16px 16px;
+	@include media("<phone"){
+		font-size: 18px;
+		padding: 12px 50px 12px 12px;
+	}
 }
 .jcf-select-drop .jcf-select-drop-content{
 	border: 2px solid $satin_linen;
@@ -164,6 +181,11 @@ body>.jcf-select-drop.jcf-drop-flipped {
 	color: $bunker;
 	margin: 0 0 26px;
 	overflow: hidden;
+	@include media("<phone"){
+		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 16px;
+	}
 }
 .radio label{
 	position: relative;
@@ -172,6 +194,10 @@ body>.jcf-select-drop.jcf-drop-flipped {
 	min-height: 40px;
 	padding-left: 60px;
 	cursor: pointer;
+	@include media("<phone"){
+		min-height: 36px;
+		padding-left: 48px;
+	}
 }
 .radio span{
 	display: inline-block;
@@ -202,6 +228,10 @@ body>.jcf-select-drop.jcf-drop-flipped {
 	border: 2px solid $satin_linen;
 	background: transparent;
 	border-radius: 5px;
+	@include media("<phone"){
+		width: 36px;
+		height: 36px;
+	}
 }
 .radio [type=radio]:checked ~ span{
 	color: $puerto_rico;
@@ -262,19 +292,26 @@ body>.jcf-select-drop.jcf-drop-flipped {
 		.info{
 			opacity: 1;
 			visibility: visible;
-			transform: translate(-50%, 5px) scale(1);
+			transform: translate(50%, 5px) scale(1);
+			@include media("<desktop"){
+				transform: translate(0, 5px) scale(1);
+			}
 		}
 	}
 }
 .info{
 	position: absolute;
 	bottom: 100%;
-	left: 50%;
-	transform: translate(-50%, 5px) scale(0);
+	right: 50%;
+	transform: translate(50%, 5px) scale(0);
 	padding-bottom: 15px;
 	transition: all .3s;
 	opacity: 0;
 	visibility: hidden;
+	@include media("<desktop"){
+		right: 0;
+		transform: translate(0, 5px) scale(0);
+	}
 	&__holder{
 		position: relative;
 		display: block;
@@ -317,16 +354,18 @@ body>.jcf-select-drop.jcf-drop-flipped {
 .navigation{
 	float: left;
 	width: 100%;
-	display: none;
 	padding-top: 14px;
 	&:after{
 		content: '';
 		clear: both;
 		display: block;
 	}
-	&.active{
-		display: block;
+	&_discount{
+		.price__item_original{
+			display: block;
+		}
 	}
+
 }
 
 .price{
@@ -334,16 +373,28 @@ body>.jcf-select-drop.jcf-drop-flipped {
 	line-height: 20px;
 	font-weight: 400;
 	padding-top: 12px;
+	@include media("<phone"){
+		font-size: 12px;
+		line-height: 18px;
+		padding-bottom: 15px;
+	}
 	&__item{
 		display: block;
 		font-size: 18px;
 		line-height: 22px;
 		font-weight: 700;
 		margin: 0 0 4px;
+		@include media("<phone"){
+			font-size: 16px;
+			line-height: 20px;
+		}
 		&_original{
-			display: block;
+			display: none;
 			color: $oslo_gray;
-			margin: -26px 0 8px;
+			margin: -26px 0 6px;
+			@include media("<phone"){
+				margin: -24px 0 6px;
+			}
 		}
 	}
 	&__descr{
@@ -351,5 +402,297 @@ body>.jcf-select-drop.jcf-drop-flipped {
 		vertical-align: top;
 		font-weight: 400;
 		margin: 0;
+	}
+}
+
+.why-simpleat-visual{
+	background: $puerto_rico;
+	padding: 100px 0;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+	.row{
+		display: flex;
+		align-items: center;
+		flex-flow: row wrap;
+	}
+	.hero__text{
+		color: lighten(saturate($puerto_rico, 43.72), 40.00);
+		margin: 0;
+		& + .hero__text{
+			margin-top: 20px;
+			@include media("<phone"){
+				margin-top: 10px;
+			}
+		}
+	}
+	&__video{
+		position: relative;
+		display: block;
+		@include media("<tablet"){
+			margin-top: 40px;
+		}
+		&-control{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			font-size: 18px;
+			line-height: 22px;
+			font-weight: 700;
+			color: $white;
+			@include media("<phone"){
+				font-size: 14px;
+				line-height: 18px;
+			}
+		}
+		&-ico-play{
+			display: block;
+			width: 80px;
+			height: 80px;
+			background: url(#{$images}ico-play-video.svg) no-repeat;
+			background-size: 100% auto;
+			margin: 0 auto 10px;
+			@include media("<phone"){
+				width: 40px;
+				height: 40px;
+				margin-bottom: 5px;
+			}
+		}
+	}
+	&__image{
+		display: block;
+		width: 100%;
+	}
+}
+
+.why-simpleat{
+	padding: 85px 0 100px;
+	text-align: center;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+	&__list{
+		margin: 0 -15px;
+		padding: 34px 0 0;
+		list-style: none;
+		display: flex;
+		flex-flow: row wrap;
+		@include media("<desktop"){
+			margin: 0 -10px;
+		}
+	}
+	&__item{
+		display: block;
+		width: 16.6666667%;
+		padding: 0 15px 30px;
+		@include media("<desktop"){
+			padding: 0 10px 20px;
+		}
+		@include media("<tablet"){
+			width: 33.33333%;
+		}
+		@include media("<500px"){
+			width: 50%;
+		}
+	}
+	&__img{
+		position: relative;
+		display: block;
+		border-radius: 50%;
+		overflow: hidden;
+		width: 100%;
+		padding-top: 100%;
+		margin-bottom: 35px;
+		@include media("<phone"){
+			margin-bottom: 20px;
+		}
+	}
+	&__ico{
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__title{
+		display: block;
+		font-size: 24px;
+		line-height: 28px;
+		font-family: $bebas;
+		color: $bunker;
+		text-transform: uppercase;
+		margin: 0 0 18px;
+		@include media("<desktop"){
+			font-size: 20px;
+			line-height: 24px;
+		}
+		@include media("<phone"){
+			font-size: 18px;
+			line-height: 22px;
+			margin-bottom: 12px;
+		}
+	}
+	&__text{
+		display: block;
+		font-size: 13px;
+		line-height: 19px;
+		font-weight: 400;
+		color: $mako;
+		margin: 0;
+		@include media("<phone"){
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+}
+
+.testimonial{
+	background: $aqua_haze;
+	padding: 85px 0 100px;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+}
+.ingredients{
+	padding: 85px 0 100px;
+	text-align: center;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+	.why-simpleat__item{
+		width: 20%;
+		@include media("<tablet"){
+			width: 33.33333%;
+		}
+		@include media("<500px"){
+			width: 50%;
+		}
+	}
+}
+.facts{
+	background: $aqua_haze;
+	padding: 85px 0 100px;
+	text-align: center;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+}
+.chart{
+	padding: 85px 0 100px;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+	&__img{
+		padding: 10px 0 0;
+	}
+	&__image{
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+.super-food{
+	background: $aqua_haze;
+	padding: 85px 0 100px;
+	text-align: center;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+}
+.newsletter{
+	padding: 85px 0 100px;
+	@include media("<phone"){
+		padding: 50px 0;
+	}
+}
+.form{
+	max-width: 750px;
+	margin: 0 auto;
+	&_subscribe{
+		display: flex;
+		flex-flow: row nowrap;
+	}
+	&__box{
+		margin-right: 20px;
+		flex: 1 0 auto;
+	}
+	&__control{
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+		height: 60px;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 28px;
+		padding: 10px 20px;
+		border: 2px solid $satin_linen;
+		background: rgba(255,255,255, 0.16);
+		color: $bunker;
+		border-radius: 5px;
+		box-shadow: none;
+		&:focus{
+			box-shadow: 0 1px 5px rgba($black, .2);
+			outline: none;
+		}
+		&::-moz-placeholder {
+			color: $bunker;
+			opacity: 1;
+		}
+		&:-ms-input-placeholder{
+			color: $bunker;
+		}
+		&::-webkit-input-placeholder{
+			color: $bunker;
+		}
+	}
+}
+
+
+.tabs{
+	&__caption{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0;
+		line-height: 0;
+		&-item{
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			width: 33.333333%;
+			background: #35495d;
+			font-size: 18px;
+			line-height: 24px;
+			font-weight: 500;
+			padding: 12px 8px;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+			&.active{
+				background: #3cffb5;
+				color: #333;
+				&:before{
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					height: 1px;
+					background: #35495d;
+				}
+			}
+		}
+	}
+	&__content{
+		display: none;
+		min-height: 100px;
+		background: #35495d;
+		&.active{
+			display: block;
+			background: #3cffb5;
+		}
 	}
 }
